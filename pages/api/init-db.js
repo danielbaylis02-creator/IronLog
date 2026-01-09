@@ -1,6 +1,6 @@
 const { Client } = require("pg");
 
-module.exports = async (req, res) => {
+module.exports = async function handler(req, res) {
   try {
     if (req.method !== "POST") {
       return res.status(405).json({ ok: false, error: "Use POST" });
@@ -33,6 +33,8 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ ok: true, message: "DB initialized" });
   } catch (err) {
-    return res.status(500).json({ ok: false, error: String(err.message || err) });
+    return res
+      .status(500)
+      .json({ ok: false, error: String(err.message || err) });
   }
 };

@@ -1,77 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>IronLog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-    .features {
-      margin: 40px 0;
-    }
-    .features li {
-      list-style: none;
-      margin: 12px 0;
-    }
-    .waitlist {
-      margin-top: 50px;
-      padding: 30px;
-      background: #020617;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>IronLog</h1>
-<p>A simple fitness log for teens and gym beginners — track workouts, stay consistent, and improve.</p>
+import Head from "next/head";
 
-    <ul class="features">
-      <li>📊 Log workouts and track progress</li>
-      <li>🔥 See strength improvements over time</li>
-      <li>👥 Share workouts with friends</li>
-      <li>📱 Built for mobile-first athletes</li>
-    </ul>
+export default function HomePage() {
+  return (
+    <>
+      <Head>
+        <title>IronLog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
-    <div class="waitlist">
-<div class="waitlist">
-  <h2>Join the waitlist</h2>
-  <p>Get early access when IronLog launches.</p>
+      <div className="container">
+        <h1>IronLog</h1>
 
-  <form action="https://formspree.io/f/maqnrwqq" method="POST">
-    <input type="text" name="name" placeholder="Your name" required
-      style="padding:12px;width:240px;border-radius:8px;border:none;margin:6px;" />
-    <br />
-    <input type="email" name="email" placeholder="Your email" required
-      style="padding:12px;width:240px;border-radius:8px;border:none;margin:6px;" />
-    <br />
-    <button type="submit"
-      style="padding:12px 18px;border-radius:8px;border:none;margin-top:10px;cursor:pointer;">
-      Join waitlist
-    </button>
-  </form>
-</div>
-      <p>IronLog is in development. Join the waitlist.</p>
-    </div>
-  </div>
-</body>
-</html>
+        <p>
+          A simple fitness log for teens and gym beginners — track workouts, stay
+          consistent, and improve.
+        </p>
+
+        <ul className="features">
+          <li>📊 Log workouts and track progress</li>
+          <li>🔥 See strength improvements over time</li>
+          <li>👥 Share workouts with friends</li>
+          <li>📱 Built for mobile-first athletes</li>
+        </ul>
+
+        <div className="waitlist">
+          <h2>Join the waitlist</h2>
+          <p>Get early access when IronLog launches.</p>
+
+          <form action="https://formspree.io/f/maqnrwqq" method="POST">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+            <br />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+            <br />
+            <button type="submit">Join waitlist</button>
+          </form>
+        </div>
+      </div>
+
+      <style jsx global>{`
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background: #0f172a;
+          color: #ffffff;
+          text-align: center;
+        }
+      `}</style>
+
+      <style jsx>{`
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 80px 20px;
+        }
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1.2rem;
+          color: #cbd5e1;
+        }
+        .features {
+          margin: 40px 0;
+          padding: 0;
+        }
+        .features li {
+          list-style: none;
+          margin: 12px 0;
+        }
+        .waitlist {
+          margin-top: 50px;
+          padding: 30px;
+          background: #020617;
+          border-radius: 10px;
+        }
+        input {
+          padding: 12px;
+          width: 240px;
+          border-radius: 8px;
+          border: none;
+          margin: 6px;
+        }
+        button {
+          padding: 12px 18px;
+          border-radius: 8px;
+          border: none;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+      `}</style>
+    </>
+  );
+}
